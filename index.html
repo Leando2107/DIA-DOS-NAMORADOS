@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MINHA ESPOSA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #ad1f73;
+      --background-color: #fff8fc;
+      --text-color: #2e2e2e;
+      --card-bg: #ffffff;
+      --card-shadow: rgba(0, 0, 0, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--background-color);
+      color: var(--text-color);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 60px 20px;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+      animation: fadeInDown 1s ease;
+    }
+
+    header h1 {
+      font-size: 2.6rem;
+      color: var(--primary-color);
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      color: #555;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .image-container {
+      max-width: 680px;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px var(--card-shadow);
+      margin-bottom: 40px;
+      animation: zoomIn 1s ease;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .image-container img:hover {
+      transform: scale(1.02);
+    }
+
+    .audio-card {
+      background-color: var(--card-bg);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px var(--card-shadow);
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+      animation: fadeInUp 1.2s ease;
+    }
+
+    .audio-card h2 {
+      font-size: 1.4rem;
+      color: var(--primary-color);
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+
+    audio {
+      width: 100%;
+      max-width: 520px;
+      outline: none;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes zoomIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .audio-card h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>PARA A MINHA MENINA 💖</h1>
+    <p>.</p>
+  </header>
+
+  <div class="image-container">
+    <img src="imagem/WhatsApp Image 2025-05-19 at 09.34.50.jpeg" alt="Imagem especial">
+  </div>
+
+  <div class="audio-card">
+    <h2>UM POUCO DO QUE SINTO POR VOCÊ ✨</h2>
+    <audio controls>
+      <source src="audio/musica (2).mp3" type="audio/mp3">
+      Seu navegador não suporta a reprodução de áudio.
+    </audio>
+  </div>
+
+  <script>
+    const symbols = ['💖', '🌸', '⭐'];
+
+    function createFallingSymbol() {
+      const symbol = document.createElement('div');
+      symbol.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+      symbol.style.position = 'fixed';
+      symbol.style.left = Math.random() * 100 + 'vw';
+      symbol.style.top = '-2em';
+      symbol.style.fontSize = Math.random() * 20 + 20 + 'px';
+      symbol.style.opacity = Math.random() * 0.5 + 0.5;
+      symbol.style.zIndex = '0';
+      symbol.style.pointerEvents = 'none';
+      symbol.style.animation = 'fall linear';
+      symbol.style.animationDuration = Math.random() * 3 + 3 + 's';
+
+      document.body.appendChild(symbol);
+
+      symbol.addEventListener('animationend', () => {
+        symbol.remove();
+      });
+    }
+
+    setInterval(createFallingSymbol, 300);
+  </script>
+
+  <style>
+    @keyframes fall {
+      to {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+
+</body>
+</html>
